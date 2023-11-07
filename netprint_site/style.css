@@ -1,0 +1,482 @@
+@keyframes header_anim {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes shapka_anim {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+body {
+  font-family: "Geologica", "Montserrat", sans-serif;
+  color: #111;
+  background: url("img/Curve\ Line(1).svg") no-repeat fixed;
+  background-size: cover;
+}
+h1 {
+  color: #2b5bd6;
+  font-weight: bold;
+  font-size: 4em;
+  max-width: 33%;
+}
+
+.shapka {
+  transform: translateY(0);
+  animation-name: shapka_anim;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.4, 0.5, 0.34);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  min-height: 200px;
+  height: auto;
+  margin: auto;
+  z-index: 150; /* Выберите подходящее значение, оно должно быть выше, чем у других элементов */
+  border: 1px solid #007bff; /* Граница с цветом */
+  background-color: #ffffff;
+  height: 17%;
+}
+
+.high_header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  max-width: 70%;
+  margin: auto;
+}
+
+.high_header .print_email {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 5%;
+  font-size: 1.12em;
+  color: #111;
+  font-weight: 50px;
+}
+
+.high_header strong {
+  font-weight: lighter;
+}
+
+.print_email a {
+  color: #2b5bd6;
+  font-size: 1.25em;
+  text-decoration: none;
+}
+
+.print_email div {
+  margin-left: 50px;
+  line-height: 0.98;
+}
+
+/* Общие стили, применяемые на всех экранах */
+.nav {
+  position: fixed;
+  top: 80px; /* Выберите нужное значение */
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  max-width: 70%;
+  margin: auto;
+  margin-bottom: 2px;
+  margin-top: 0.7%;
+}
+.nav .link_nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  height: 20%;
+  max-width: 100%;
+  margin: auto;
+}
+
+.nav a {
+  margin-right: 10px; /* Уменьшаем отступ между элементами */
+  margin-left: 10px;
+  min-width: 80px;
+  text-decoration: none;
+  color: #111;
+  font-size: 1.5em;
+  font-weight: lighter;
+  color: #000;
+}
+
+.nav .offer_button,
+.send_button {
+  margin-left: 10%;
+  margin-top: 1%;
+  width: 150px;
+  min-width: 164px; /* Уменьшаем ширину кнопки */
+  height: 52px;
+  border: 1px solid #2b5bd6;
+  transition: background-color 0.6s;
+
+  border-radius: 28px;
+  background-color: #fff;
+  color: #2b5bd6;
+  font-size: 1em;
+}
+.nav .offer_button:hover {
+  background-color: #2b5bd6;
+  color: #fff;
+}
+.nav .offer_button:active {
+  background-color: #172f6b;
+  color: #ffffff;
+  border: none;
+}
+.header {
+  width: 100%;
+  max-height: 940px;
+  height: 940px;
+  background-color: rgba(247, 247, 247, 0.5);
+  border-radius: 8px;
+  border: 0px solid #ccc; /* Граница с цветом */
+  backdrop-filter: blur(5px);
+  margin-top: 160px;
+}
+
+.short_discription {
+  width: 90%; /* Увеличиваем ширину блока */
+  max-width: 90%; /* Максимальная ширина равна ширине экрана */
+  margin-left: 5%; /* Выравниваем по центру */
+  transform: translateX(0);
+  animation-name: header_anim;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 0.8, 0.4);
+}
+
+.short_discription .text {
+  font-size: auto; /* Уменьшаем размер шрифта */
+  width: 90%;
+  max-width: 90%;
+  margin-top: 5%;
+  padding-top: 1%;
+}
+/* Медиа-запрос для маленьких экранов (мобильные устройства) */
+@media (max-width: 768px) {
+  .high_header {
+    text-align: center; /* Выравниваем текст по центру */
+  }
+
+  .high_header .print_email {
+    flex-direction: column; /* Элементы выстраиваются вертикально на маленьких экранах */
+    text-align: center; /* Выравниваем текст по центру */
+    margin-top: 0px; /* Добавляем отступ сверху */
+    font-size: 0.75em;
+  }
+
+  .print_email div {
+    margin-left: 0; /* Убираем левый отступ на маленьких экранах */
+    margin-top: 10px; /* Добавляем отступ сверху */
+  }
+  .shapka {
+    min-height: 200px;
+  }
+  .offer_button {
+    margin-top: 20px;
+  }
+}
+
+/* Медиа-запрос для средних экранов (планшеты) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .high_header {
+    max-width: 90%; /* Уменьшаем максимальную ширину на средних экранах */
+  }
+
+  .print_email a {
+    font-size: 0.9em; /* Уменьшаем размер шрифта ссылок на средних экранах */
+  }
+  .nav {
+    margin-top: 4px;
+  }
+  .header {
+    margin-top: 20%;
+  }
+}
+
+/* Медиа-запрос для больших экранов (десктопы) */
+@media (min-width: 1025px) {
+  .high_header {
+    max-width: 95%; /* Увеличиваем максимальную ширину на больших экранах */
+  }
+
+  .print_email a {
+    font-size: 1.5em; /* Увеличиваем размер шрифта ссылок на больших экранах */
+  }
+}
+/* Медиа-запрос для маленьких экранов (мобильные устройства) */
+@media (max-width: 768px) {
+  .nav .link_nav {
+    margin-top: 20px;
+    width: 100%;
+    flex-wrap: wrap; /* Переносим элементы на новую строку */
+    justify-content: center; /* Выравниваем по центру */
+  }
+  .nav {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .nav a {
+    margin-right: 5px; /* Уменьшаем отступ между элементами */
+    font-size: 1.2em; /* Уменьшаем размер шрифта */
+    font-weight: bold;
+    color: #2b5bd6;
+  }
+
+  .nav .offer_button {
+    margin-top: 12px;
+    min-width: 120px; /* Уменьшаем ширину кнопки */
+    margin-left: 0;
+    width: 30%;
+  }
+
+  .short_discription {
+    width: 90%; /* Увеличиваем ширину блока */
+  }
+
+  .short_discription .text {
+    font-size: 1.75em; /* Уменьшаем размер шрифта */
+  }
+  .high_header img {
+    width: 96px;
+  }
+  .high_header {
+    justify-content: space-between;
+  }
+}
+
+/* Общие стили для всех экранов */
+.gallery_functions {
+  transform: translateX(0);
+  animation-name: shapka_anim;
+  animation-duration: 1.5s;
+  animation-timing-function: cubic-bezier(0.98, -0.55, 0.1, 0.5, 0.34);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: lighter;
+  width: 80%;
+  padding-left: 1%;
+  padding-right: 1%;
+  margin: auto;
+  vertical-align: middle;
+  margin-top: 5%;
+}
+
+.gallery_functions figure {
+  width: auto;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.gallery_functions img {
+  width: auto;
+  max-width: 50%;
+}
+
+.gallery_functions figcaption {
+  font-size: 1.3em;
+}
+
+.gallery_functions strong {
+  color: #2b5bd6;
+}
+
+/* Медиа-запрос для маленьких экранов (мобильные устройства) */
+@media (max-width: 768px) {
+  .header {
+    margin-top: 30%;
+  }
+  .gallery_functions {
+    flex-direction: column; /* Элементы выстраиваются вертикально на маленьких экранах */
+    align-items: center; /* Выравниваем элементы по центру */
+    text-align: center; /* Выравниваем текст по центру */
+  }
+
+  .gallery_functions img {
+    max-width: 100%; /* Устанавливаем максимальную ширину 100% на маленьких экранах */
+  }
+  .header {
+    flex-direction: column;
+    margin-bottom: 140%;
+  }
+}
+.process_discription {
+  width: 100%;
+  height: 940px;
+  margin: auto;
+  background-color: rgba(247, 247, 247, 0.5);
+  border-radius: 8px;
+  border: 0px solid #ccc; /* Граница с цветом */
+  backdrop-filter: blur(5px);
+}
+.process_discription .content_procces {
+  display: flex;
+  justify-content: space-between;
+}
+.process_discription p {
+  width: 45%;
+  font-size: 1.25em;
+  margin-left: 5%;
+  height: 500px;
+}
+.process_discription h1 {
+  padding-top: 2%;
+  margin-left: 5%;
+  text-align: left;
+}
+.process_discription img {
+  width: 30%;
+  height: 100%;
+  margin-right: 5%;
+  border-radius: 8px;
+}
+
+.forma {
+  width: 100%;
+  background-color: rgba(247, 247, 247, 0.5);
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  margin: 0 auto;
+  text-align: center; /* Выравнивание текста по центру */
+  line-height: 0.8;
+  font-size: 1.2em;
+  padding-top: 20px;
+  font-weight: bold;
+  color: #2b5bd6;
+}
+.forma .__input {
+  border-radius: 45px;
+  border: 1px solid #ccc; /* Граница с цветом */
+  background-color: rgb(255, 255, 255);
+  width: 40%;
+  height: 64px;
+  margin-bottom: 10px;
+  display: block; /* Сделаем input-элементы блочными, чтобы они располагались друг под другом */
+  margin: 0 auto; /* Центрируем input-элементы внутри контейнера */
+  margin-bottom: 2%;
+  margin-top: 2%;
+  text-align: left;
+  font-size: 1.2em;
+  color: #0056b3;
+  overflow: auto;
+  resize: none;
+}
+.forma .files_send {
+  margin-top: 2%;
+}
+
+.input_fields input[type="file"] {
+  border: none;
+  border-radius: 0px;
+  background-color: transparent;
+}
+textarea {
+  width: 40%; /* Занимает 100% доступной ширины контейнера */
+  max-width: 90%;
+  min-width: 40%;
+  min-height: 150px;
+  max-height: 600px;
+  border: 3px solid #111;
+  padding: 10px; /* Внутренний отступ */
+  font-size: 16px; /* Размер шрифта */
+  border: 1px solid #ccc; /* Граница с цветом */
+  border-radius: 5px; /* Скругленные углы */
+  font-family: "Segoe UI", Tahoma, "Geneva", Verdana, sans-serif;
+  border-radius: 15px;
+}
+.dis_cont {
+  display: block; /* Сделаем input-элементы блочными, чтобы они располагались друг под другом */
+  margin: 0 auto; /* Центрируем input-элементы внутри контейнера */
+}
+
+/* Стили для поля ввода при фокусе (нажатии) */
+.input_fields input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+.input_fields .send_button:hover {
+  background-color: #ffffff;
+  color: #2b5bd6;
+}
+
+/* Стили для поля ввода при наведении (hover) */
+.input_fields input:hover {
+  background-color: #f3f2f2;
+}
+.input_fields .send_button:active {
+  background-color: #f1f1f1;
+  color: #2b5bd6;
+  border-color: #007bff;
+}
+
+/* Стили для кнопки "Отправить" */
+.forma .send_button {
+  background-color: #007bff;
+  color: #fff;
+  transition: background-color 0.6s;
+  width: 30%;
+  margin-bottom: 10%;
+  display: block; /* Сделаем input-элементы блочными, чтобы они располагались друг под другом */
+  margin: 0 auto; /* Центрируем input-элементы внутри контейнера */
+  margin-bottom: 2%;
+}
+
+input[type="file"].__input:hover {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.forma h1 {
+  text-align: left;
+  width: 90%;
+  max-width: 95%;
+  margin-left: 5%;
+}
+
+.footer {
+  width: 100%;
+  height: 80px;
+  max-height: 80px;
+  background-color: #2b5bd6;
+  color: #fff;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Это выравнивает текст по нижнему краю контейнера */
+  text-align: center;
+}
+
+.footer_text {
+  position: absolute;
+  transform: translate(
+    0,
+    50%
+  ); /* Сдвигает текст на половину его собственной высоты вверх */
+  margin-bottom: 40px;
+}

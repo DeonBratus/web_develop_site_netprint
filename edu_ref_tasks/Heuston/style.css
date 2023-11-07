@@ -1,0 +1,34 @@
+
+body{
+  font-family:'Montserate','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  margin: auto;
+ 
+  
+}
+h1{
+    text-align: center;
+    font-size: 48px;
+    line-height: 0.9;
+}
+h2{
+    text-align: center;
+    
+}
+.name_article{
+    font-size: 64px;
+}
+table, th, td{
+    border: 1px solid #000000;
+    margin-left: auto;
+    margin-right: auto;
+}
+figcaption{
+    font-style: italic;
+}
+figure{
+    float: right;
+    margin-right: auto;
+}
