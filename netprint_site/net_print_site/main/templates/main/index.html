@@ -1,5 +1,5 @@
 {% extends 'main/layout.html' %}
-
+{% load static%}
 {% block content %}
     <br> 
 
@@ -11,21 +11,21 @@
         <div class="gallery_functions">
 
             <figure>
-                <img src="img/rotation_9487890.png" alt="">
+                <img src="{% static 'main/img/rotation_9487890.png' %}" alt="">
                 <figcaption><strong>Проектируем и моделируем.</strong><br>
                     Создание трехмерных моделей любой сложности
                 </figcaption>
             </figure>
 
             <figure>
-                <img src="img/3d-printing_663671.png" alt="">
+                <img src="{% static "main/img/3d-printing_663671.png"%}" alt="">
                 <figcaption> <strong>Собственный парк 3D-принтеров. </strong><br>
                     Имеем разнообрзные принтеры
                 </figcaption>
             </figure>
 
             <figure>
-                <img src="img/network_4998009.png" alt="">
+                <img src="{% static "main/img/network_4998009.png"%}" alt="">
                 <figcaption> <strong>Единичное и серийное производство. </strong><br>
                     Работаем с организациями.
                 </figcaption>
@@ -43,33 +43,18 @@
                 при помощи которого трехмерную модель,
                 созданную на компьютере, можно воссоздать в жизни.
             </p>
-            <img src="img/technology-equipment-blue-laboratory-generated-by-ai.jpg" alt="">
+            <img src="{% static "main/img/technology-equipment-blue-laboratory-generated-by-ai.jpg"%}" alt="">
         </div>
 
     </div>
 
     <br>
-
-    <div class="forma">
-        <h1>Заполните форму для связи с нами</h1>
-        <div class="input_fields">
-            <div>Имя <input type="text" name="name" class="__input"> </div>
-            <div>Телефон <input type="tel" name="phone" class="__input"> </div>
-            <div>Почта <input type="email" name="email" class="__input"></div>
-            <div>Соц. сети <input type="url" name="Social_nets" class="__input"></div>
-            <div class="dis_cont">
-                <p>Описание</p>
-                <textarea rows="1" cols="1" class=""></textarea>
-            </div>
-            <div class="files_send">Прикрепите файлы <input type="file" name="files" class="__input"></div>
-            <input type="submit" class="send_button">
-        </div>
-
-
+    
+   {% include "main/form.html" %}
 
     </div>
     <div class="footer">
         <div class="footer_text"> Net Print Studio <br> 2023</div>
     </div>
 
-{% endblock %}
+    {% endblock %}

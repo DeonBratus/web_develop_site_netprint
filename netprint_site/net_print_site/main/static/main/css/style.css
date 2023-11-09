@@ -14,6 +14,22 @@
     transform: translateY(0%);
   }
 }
+@keyframes success_anim {
+  from {
+    transform: translateY(-1000%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+@keyframes button_size {
+  from{
+    transform: scale(1);
+  }
+  to{
+    transform: scale(1.05);
+  }
+}
 
 body {
   font-family: "Geologica", "Montserrat", sans-serif;
@@ -50,6 +66,7 @@ h1 {
   border: 1px solid #007bff; /* Граница с цветом */
   background-color: #ffffff;
   height: 17%;
+  
 }
 
 .high_header {
@@ -101,6 +118,8 @@ h1 {
   margin: auto;
   margin-bottom: 2px;
   margin-top: 0.7%;
+ 
+  
 }
 .nav .link_nav {
   display: flex;
@@ -110,6 +129,7 @@ h1 {
   height: 20%;
   max-width: 100%;
   margin: auto;
+  
 }
 
 .nav a {
@@ -121,6 +141,14 @@ h1 {
   font-size: 1.5em;
   font-weight: lighter;
   color: #000;
+  transition: all .5s ease;
+  
+}
+
+.nav a:hover{
+  color: #2b5bd6;
+  transform: scale(1.05);
+
 }
 
 .nav .offer_button,
@@ -132,6 +160,8 @@ h1 {
   height: 52px;
   border: 1px solid #2b5bd6;
   transition: background-color 0.6s;
+  transition: all .5s ease;
+  
 
   border-radius: 28px;
   background-color: #fff;
@@ -141,13 +171,14 @@ h1 {
 .nav .offer_button:hover {
   background-color: #2b5bd6;
   color: #fff;
+  transform: scale(1.05);
 }
 .nav .offer_button:active {
   background-color: #172f6b;
   color: #ffffff;
   border: none;
 }
-.header {
+.header, .other_head {
   width: 100%;
   max-height: 940px;
   height: 940px;
@@ -156,8 +187,20 @@ h1 {
   border: 0px solid #ccc; /* Граница с цветом */
   backdrop-filter: blur(5px);
   margin-top: 160px;
+ 
 }
-
+.other_head{
+  text-align: center;
+  margin-top: 20%;
+  
+}
+.other_head .short_discription{
+ 
+  transform: translateY(0);
+  animation-name: success_anim;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.4, 0.5, 0.34);
+}
 .short_discription {
   width: 90%; /* Увеличиваем ширину блока */
   max-width: 90%; /* Максимальная ширина равна ширине экрана */
@@ -166,6 +209,7 @@ h1 {
   animation-name: header_anim;
   animation-duration: 1s;
   animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 0.8, 0.4);
+  
 }
 
 .short_discription .text {
@@ -421,30 +465,33 @@ textarea {
   outline: none;
 }
 .input_fields .send_button:hover {
-  background-color: #ffffff;
-  color: #2b5bd6;
+  background-color: #2b5bd6;
+  color: #ffffff;
+  transform: scale(1.02);
 }
 
 /* Стили для поля ввода при наведении (hover) */
 .input_fields input:hover {
-  background-color: #f3f2f2;
+  background-color: #f2f2f3;
 }
 .input_fields .send_button:active {
-  background-color: #f1f1f1;
+  background-color: #ffffff;
   color: #2b5bd6;
   border-color: #007bff;
+  transition: 0.1s;
 }
 
 /* Стили для кнопки "Отправить" */
 .forma .send_button {
-  background-color: #007bff;
-  color: #fff;
+  background-color: #ffffff;
+  color: #2b5bd6;
   transition: background-color 0.6s;
   width: 30%;
-  margin-bottom: 10%;
   display: block; /* Сделаем input-элементы блочными, чтобы они располагались друг под другом */
   margin: 0 auto; /* Центрируем input-элементы внутри контейнера */
-  margin-bottom: 2%;
+  margin-bottom: 1%;
+  transition: all .5s ease;
+
 }
 
 input[type="file"].__input:hover {
@@ -458,6 +505,7 @@ input[type="file"].__input:hover {
   max-width: 95%;
   margin-left: 5%;
 }
+
 
 .footer {
   width: 100%;

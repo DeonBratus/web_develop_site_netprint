@@ -1,0 +1,16 @@
+
+<div class="forma">
+    <h1>Заполните форму для связи с нами</h1>
+    <form class="input_fields", method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.name}}
+        {{form.number}}
+        {{form.mail}}
+        {{form.social_nets}}
+        {{form.description}}
+        {{form.files}}
+        <span>{{error}}<span>
+        
+    </form>
+    <button type="submit" class="send_button">Отправить</button>
+</div>
