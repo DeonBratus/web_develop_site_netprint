@@ -1,0 +1,57 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetPrint Studio - студия 3D-печати</title>
+    <link rel="stylesheet" href="{% static "main/css/style.css" %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;800&family=Montserrat:ital,wght@0,300;0,500;1,400&family=Raleway&display=swap"
+        rel="stylesheet">
+</head>
+
+    <body>
+        <div class="shapka">
+
+            <div class="high_header">
+                <img src="{% static "main/img/Group 256(2).svg"%}" alt="" class="logo">
+                <div class="print_email">
+
+                    <div>
+                        Звоните на телефон <br>
+                        <a href=""> <strong> +7 (928) 432-75-01 </strong> </a> <br>
+                    </div>
+
+                    <div>
+                        Пишите на почту <br>
+                        <a href=""> <strong> netprint@yandex.ru </strong> </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="nav">
+                <div class="link_nav"><a href="{% url "home"%}">Главная</a>
+                    <a href="">Услуги</a>
+                    <a href="">Портфолио</a>
+                    <a href="{% url "contacts" %}">Контакты</a>
+                    <button class="offer_button">
+                        <div class="btn_txt">
+                            <strong>Узнать стоимость</strong>
+                        </div>
+                </div>
+
+                </button>
+            </div>
+
+        </div>
+        {% block content %}
+
+        {% endblock  %}
+    
+    </body>
+</html>
