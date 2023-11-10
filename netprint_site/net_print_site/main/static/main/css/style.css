@@ -354,7 +354,7 @@ h1 {
 /* Медиа-запрос для маленьких экранов (мобильные устройства) */
 @media (max-width: 768px) {
   .header {
-    margin-top: 30%;
+    margin-top: 50%;
   }
   .gallery_functions {
     flex-direction: column; /* Элементы выстраиваются вертикально на маленьких экранах */
