@@ -1,0 +1,59 @@
+{% extends 'main/layout.html'%}
+{% block content %}
+
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    a {
+        text-decoration: none;
+        color: #0066cc;
+    }
+</style>
+
+<br>
+<div class="header">
+    <div class="short_discription">
+        <h1 class="text"> Ответы на форму </h1>
+    </div>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Description</th>
+                <th>Files</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for el in data %}
+                <tr>
+                    <td>{{ el.id }}</td>
+                    <td>{{ el.name }}</td>
+                    <td>{{ el.phone }}</td>
+                    <td>{{ el.mail }}</td>
+                    <td>{{ el.description }}</td>
+                    <td>
+                        <a href="{{ download_file }}" download="{{ el.files }}">{{ el.files }}</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+{% endblock%}

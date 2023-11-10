@@ -23,5 +23,7 @@ def index(request):
 def cont(response):
    
     return render(response, "main/contacts.html" )
+
 def show_success(response):
+    data = {}
     return render(response, "main/supa.html")
