@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['10.8.0.57','netprint61.ru']
 
 INSTALLED_APPS = [
     'main',
+    'tgbot',
     'form_res_view',
     'django.contrib.admin',
     'django.contrib.auth',

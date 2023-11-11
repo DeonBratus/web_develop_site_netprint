@@ -1,12 +1,14 @@
 from django.shortcuts import render, redirect
 from main.forms import OffersForm
+from main.models import Offers
 
+import telebot
+bot = telebot.TeleBot('6434629302:AAEpVlT29pZfY3kryTMnYOnk2SYjFFhiFw0')
 # Create your views here.
 def index(request):
     error = ''
     if request.method == 'POST':
         form = OffersForm(request.POST, request.FILES)
-        print (form.is_valid())
         if form.is_valid():
             form.save()
             return redirect('success_page') 
@@ -18,6 +20,7 @@ def index(request):
         'form' : form,
         'error' : error
     }
+    print(Offers.objects.last())
     return render(request, "main/index.html", data)
 
 def cont(response):
